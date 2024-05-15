@@ -1,0 +1,39 @@
+package newspaper;
+
+public abstract class NewspaperSubscription {
+    protected String name;
+    protected String address;
+    protected double rate;
+
+//    public NewspaperSubscription(String name, String address) {
+//        this.name = name;
+//        this.address = address;
+//    }
+//
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public double getRate() {
+        return rate;
+    }
+
+    public abstract void setAddress(String address) ;
+
+    @Override
+    public String toString() {
+        return "NewspaperSubscription{" +
+                "name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", rate=" + rate +
+                '}';
+    }
+}

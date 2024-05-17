@@ -1,4 +1,6 @@
-package fotball;
+package fotball.repository;
+
+import fotball.*;
 
 public class DataWarehouse {
     private static DataWarehouse instance;
@@ -8,7 +10,7 @@ public class DataWarehouse {
     private Referee[] refereeList = new Referee[100];
     private Team[] teamList = new Team[100];
     private Player[] playerList = new Player[100];
-
+    private Person[] personList = new Person[100];
 
     public static DataWarehouse getDataWarehouse() {
         if (instance == null) {
@@ -44,6 +46,15 @@ public class DataWarehouse {
         for (int i = 0; i < playerList.length; i++) {
             if (playerList[i] == null) {
                 playerList[i] = player;
+                return;
+            }
+        }
+        System.err.println("Failed to add .Array is full.");
+    }
+    public void addPerson(Person person) {
+        for (int i = 0; i < personList.length; i++) {
+            if (personList[i] == null) {
+                personList[i] = person;
                 return;
             }
         }
@@ -128,6 +139,22 @@ public class DataWarehouse {
 
     public void setTeamList(Team[] teamList) {
         this.teamList = teamList;
+    }
+
+    public Player[] getPlayerList() {
+        return playerList;
+    }
+
+    public void setPlayerList(Player[] playerList) {
+        this.playerList = playerList;
+    }
+
+    public Person[] getPersonList() {
+        return personList;
+    }
+
+    public void setPersonList(Person[] personList) {
+        this.personList = personList;
     }
 }
 

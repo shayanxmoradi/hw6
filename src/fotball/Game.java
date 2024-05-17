@@ -10,12 +10,12 @@ public class Game {
     private Referee[] refereeTeam;
     private Goal[] goals;
 
-    public Game(Player[] hostPlayers, Player[] hostSavedPlayers, Player[] opponentPlayers, Referee[] refereeTeam, Player[] opponentSavedPlayers, Goal[] goals) {
+    public Game(Player[] hostPlayers, Player[] hostSavedPlayers, Player[] opponentPlayers, Player[] opponentSavedPlayers, Referee[] refereeTeam, Goal[] goals) {
         this.hostPlayers = hostPlayers;
         this.hostSavedPlayers = hostSavedPlayers;
         this.opponentPlayers = opponentPlayers;
-        this.refereeTeam = refereeTeam;
         this.opponentSavedPlayers = opponentSavedPlayers;
+        this.refereeTeam = refereeTeam;
         this.goals = goals;
     }
 

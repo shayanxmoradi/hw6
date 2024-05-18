@@ -1,10 +1,8 @@
-package fotball;
-
-import java.util.Arrays;
+package fotball.model;
 
 public class Coach extends Person {
     private Contract contract;
-    private Contract[] contractHistory= new Contract[100];
+    private Contract[] contractHistory = new Contract[100];
     private int vactionDays;
     private double perDaySalery;
 
@@ -14,6 +12,7 @@ public class Coach extends Person {
         this.vactionDays = vactionDays;
         this.perDaySalery = perDaySalery;
     }
+
     public void addContract(Contract contract) {
         for (int i = 0; i < contractHistory.length; i++) {
             if (contractHistory[i] == null) {
@@ -25,8 +24,10 @@ public class Coach extends Person {
     }
 
     @Override
-    double calculate() {
-        return this.getContract().getBaseContractFee()+ (30-vactionDays)*perDaySalery;
+    public double calculate() {
+        System.out.println("salery for coach -->" + this.getLastName());
+
+        return this.getContract().getBaseContractFee() + (30 - vactionDays) * perDaySalery;
 
     }
 
@@ -34,7 +35,7 @@ public class Coach extends Person {
     public String toString() {
         return "Coach{" +
                 "contract=" + contract +
-            //    ", contractHistory=" + Arrays.toString(contractHistory) +
+                //    ", contractHistory=" + Arrays.toString(contractHistory) +
                 ", vactionDays=" + vactionDays +
                 ", perDaySalery=" + perDaySalery +
                 '}';

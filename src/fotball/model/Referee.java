@@ -1,7 +1,9 @@
-package fotball;
+package fotball.model;
+
+import fotball.enums.RefereeLevl;
 
 public class Referee extends Person {
-  private RefereeLevl refereeLevl;
+    private RefereeLevl refereeLevl;
 
     public Referee(String name, String lastName, String nationality, RefereeLevl refereeLevl) {
         super(name, lastName, nationality);
@@ -9,8 +11,8 @@ public class Referee extends Person {
     }
 
     @Override
-    double calculate() {
-        return 0;
+    public double calculate() {
+        return 10000000;
     }
 
     public RefereeLevl getRefereeLevl() {

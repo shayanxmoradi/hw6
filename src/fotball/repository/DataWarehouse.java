@@ -1,6 +1,6 @@
 package fotball.repository;
 
-import fotball.*;
+import fotball.model.*;
 
 public class DataWarehouse {
     private static DataWarehouse instance;
@@ -12,9 +12,11 @@ public class DataWarehouse {
     private Player[] playerList = new Player[100];
     private Person[] personList = new Person[100];
 
+  private   DataWarehouse() {}
+
     public static DataWarehouse getDataWarehouse() {
         if (instance == null) {
-            synchronized (DataWarehouse.class) {
+             synchronized (DataWarehouse.class) {
                 if (instance == null) {
                     instance = new DataWarehouse();
                 }
@@ -42,6 +44,7 @@ public class DataWarehouse {
         }
         System.err.println("Failed to add .Array is full.");
     }
+
     public void addPlayer(Player player) {
         for (int i = 0; i < playerList.length; i++) {
             if (playerList[i] == null) {
@@ -51,6 +54,7 @@ public class DataWarehouse {
         }
         System.err.println("Failed to add .Array is full.");
     }
+
     public void addPerson(Person person) {
         for (int i = 0; i < personList.length; i++) {
             if (personList[i] == null) {

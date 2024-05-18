@@ -1,11 +1,11 @@
-package fotball;
+package fotball.model;
 
 public abstract class Person {
     private String name;
     private String lastName;
     private String nationality;
 
-    abstract double calculate();
+    public abstract double calculate();
 
     public Person(String name, String lastName, String nationality) {
         this.name = name;

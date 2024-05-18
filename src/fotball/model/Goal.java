@@ -1,10 +1,10 @@
-package fotball;
+package fotball.model;
 
 import java.sql.Time;
 
 public class Goal {
-  private Time time;
-  private Player goalMaker;
+    private Time time;
+    private Player goalMaker;
 
     public Goal(Time time, Player goalMaker) {
         this.time = time;

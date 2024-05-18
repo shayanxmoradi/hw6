@@ -3,13 +3,12 @@ package calculator;
 public class Main {
     public static void main(String[] args) {
 
-
-
         Rational rational1 = new Rational();
-        rational1.setUpRational(4, 8);
+        rational1.setUpRational(6, 5);
+        System.out.println(rational1);
 
         Rational rational2 = new Rational();
-        rational2.setUpRational(4, 8);
+        rational2.setUpRational(11, 3);
 
         // Test addition
         System.out.println("Addition: " + rational1.add(rational2));

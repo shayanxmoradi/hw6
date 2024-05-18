@@ -5,11 +5,7 @@ public abstract class NewspaperSubscription {
     protected String address;
     protected double rate;
 
-//    public NewspaperSubscription(String name, String address) {
-//        this.name = name;
-//        this.address = address;
-//    }
-//
+
     public String getName() {
         return name;
     }

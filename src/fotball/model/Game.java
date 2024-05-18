@@ -1,4 +1,4 @@
-package fotball;
+package fotball.model;
 
 import java.util.Arrays;
 

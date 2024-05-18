@@ -58,13 +58,17 @@ public class Rational {
 //
 //    }
 
-    public void setUpRational(int numerator, int denominator) {
+    public  void setUpRational(int numerator, int denominator) {
         if (denominator == 0) {
             // Handle division by zero
             System.out.println("Error: Division by zero!");
             return;
         }
 
+        simpler(numerator, denominator);
+    }
+
+    private void simpler(int numerator, int denominator) {
         int num = numerator;
         int den = denominator;
 
@@ -82,7 +86,7 @@ public class Rational {
         }
 
         // Find the greatest common divisor
-        int gcd = findGCD(num, den);
+        int gcd = MaghsomAlayhMoshtarak(num, den);
 
         // Simplify the rational number
         num /= gcd;
@@ -112,7 +116,7 @@ public class Rational {
 
 
     // Helper method to find greatest common divisor using Euclidean algorithm
-    private int findGCD(int a, int b) {
+    private int MaghsomAlayhMoshtarak(int a, int b) {
         while (b != 0) {
             int temp = b;
             b = a % b;
@@ -158,7 +162,7 @@ public class Rational {
         Rational newRational = new Rational();
 
         // Simplify
-        int gcd = findGCD(newNumerator, commonDenominator);
+        int gcd = MaghsomAlayhMoshtarak(newNumerator, commonDenominator);
         newRational.numerator = newNumerator / gcd;
         newRational.denominator = commonDenominator / gcd;
 
@@ -191,7 +195,7 @@ public class Rational {
         Rational newRational = new Rational();
 
         // Simplify
-        int gcd = findGCD(Math.abs(newNumerator), commonDenominator);
+        int gcd = MaghsomAlayhMoshtarak(Math.abs(newNumerator), commonDenominator);
         newRational.numerator = newNumerator / gcd;
         newRational.denominator = commonDenominator / gcd;
 
@@ -214,9 +218,9 @@ public class Rational {
         Rational newRational = new Rational();
 
         // Simplify
-        int gcd = findGCD(newNumerator, newDenominator);
-        newRational.numerator = newNumerator / gcd;
-        newRational.denominator = newDenominator / gcd;
+        int maghsomAlayhMoshtarak = MaghsomAlayhMoshtarak(newNumerator, newDenominator);
+        newRational.numerator = newNumerator / maghsomAlayhMoshtarak;
+        newRational.denominator = newDenominator / maghsomAlayhMoshtarak;
 
         // Calculate carry
         if (newRational.numerator >= newRational.denominator) {
